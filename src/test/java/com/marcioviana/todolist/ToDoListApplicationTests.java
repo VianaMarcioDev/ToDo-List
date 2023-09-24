@@ -7,7 +7,7 @@ import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWeb
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT )
 @AutoConfigureWebTestClient
 class ToDoListApplicationTests {
 
@@ -35,6 +35,13 @@ class ToDoListApplicationTests {
 
     @Test
     void testCreateToDoFailure() {
+        webTestClient
+                .post()
+                .uri("/todos")
+                .bodyValue(
+                        new ToDo("", "", false, 0))
+                .exchange()
+                .expectStatus().isBadRequest();
     }
 
     public WebTestClient getWebTestClient() {
