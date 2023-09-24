@@ -22,7 +22,7 @@ public class ToDoService {
         return list();
     }
     public List<ToDo> list(){
-        Sort sort = Sort.by("prioridades").descending().descending().
+        Sort sort = Sort.by("prioridade").descending().descending().
                 and(Sort.by("nome").ascending());
         return toDoRepository.findAll(sort);
     }
