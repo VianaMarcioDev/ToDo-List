@@ -2,6 +2,7 @@ package com.marcioviana.todolist.controller;
 
 import com.marcioviana.todolist.entity.ToDo;
 import com.marcioviana.todolist.service.ToDoService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,14 +11,14 @@ import java.util.List;
 @RequestMapping("/todos")
 public class ToDoController {
 
-    private ToDoService toDoService;
+    private final ToDoService toDoService;
 
     public ToDoController(ToDoService toDoService) {
         this.toDoService = toDoService;
     }
 
     @PostMapping
-    List<ToDo> create(@RequestBody ToDo toDo){
+    List<ToDo> create(@RequestBody @Valid ToDo toDo){
         return toDoService.create(toDo);
     }
 
@@ -31,7 +32,7 @@ public class ToDoController {
         return toDoService.update(toDo);
     }
 
-    @DeleteMapping("{id]")
+    @DeleteMapping("/{id}")
     List<ToDo> delete(@PathVariable("id") Long id){
         return toDoService.delete(id);
     }
