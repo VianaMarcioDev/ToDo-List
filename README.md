@@ -127,6 +127,9 @@ Certifique-se de usar um cliente REST como `Postman` ou `curl` para interagir co
 
 A documentação da API está disponível em `http://localhost:8080/swagger-ui/index.html` após a execução do aplicativo. Você pode usar essa interface interativa para explorar e testar os endpoints da API.
 
+
+<img src="swagger-ui-index-html.jpg">
+
 ### Contribuição
 
 Sinta-se à vontade para contribuir com melhorias para este projeto. Se você deseja relatar um problema ou sugerir uma melhoria, abra uma issue.
