@@ -1,6 +1,6 @@
 # ToDo List App
 
-![GitHub](https://img.shields.io/github/license/VianaMarcioDev/ToDo-List)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Este é um projeto de exemplo de uma aplicação de lista de tarefas usando Spring Boot.
 
